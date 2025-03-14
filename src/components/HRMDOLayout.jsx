@@ -154,10 +154,10 @@ const HRMDOLayout = () => (
         </Text>
         <Text>
           <Text style={styles.name}>Name: {"\n"}</Text>
-          <View style={styles.details}>
-            <Text>Official Designation: {"\n"}</Text>
-            <Text>Department/Office: {"\n"}</Text>
-            <Text>
+          <View>
+            <Text style={styles.details}>Official Designation: {"\n"}</Text>
+            <Text style={styles.details}>Department/Office: {"\n"}</Text>
+            <Text style={styles.details}>
               Summary of Leave Balance as of 11th day of March 2025 {"\n"}
             </Text>
           </View>
@@ -167,11 +167,11 @@ const HRMDOLayout = () => (
             Vacation Leave:{"\u00A0".repeat(20)}37.4170{"\n"}
           </Text>
           <Text style={styles.balance}>
-            Sick Leave:{"\u00A0".repeat(28)}119.7500{"\n"}
+            Sick Leave:{"\u00A0".repeat(28)}119.7500121{"\n"}
           </Text>
           <Text style={styles.totalBalance}>
             Total:{"\u00A0".repeat(38)}
-            <Text style={styles.totalBackground}>157.167{"\n"}</Text>
+            <Text style={styles.totalBackground}>157.162127{"\n"}</Text>
           </Text>
         </View>
       </Text>
