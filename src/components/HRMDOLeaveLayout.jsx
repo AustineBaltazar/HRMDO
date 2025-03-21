@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
   content: {
     textAlign: "center",
     fontSize: 7.5,
-    flex: 1, // Make sure this takes available space
+    flex: 1,
   },
   map: {
     width: 50,
@@ -87,14 +87,14 @@ const styles = StyleSheet.create({
     marginBottom: 6,
   },
   content1: {
-    fontSize: 9.5, // Slightly larger
-    textAlign: "justify", // Fully justified
-    lineHeight: 1.5, // Increased for readability
+    fontSize: 9.5,
+    textAlign: "justify",
+    lineHeight: 1.5,
   },
 
   letterContainer: {
     alignItems: "center",
-    marginRight: 1.8, // Adjust spacing between letters
+    marginRight: 1.8,
   },
   letter: {
     fontSize: 9.5,
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   underline: {
-    width: 7, // Width of the underline
+    width: 7,
     height: 1,
     backgroundColor: "black",
   },
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     display: "flex",
-    justifyContent: "center", // Centers vertically
+    justifyContent: "center",
   },
   nameAlign: { fontSize: 8, textAlign: "center" },
   fontFooter: { fontSize: 8, fontFamily: "Calibri" },
@@ -127,8 +127,9 @@ const text1 = "SUMMARY";
 const HRMDOLayout = () => (
   <Document>
     <Page size="A4" style={styles.page}>
+      {/* <---- Start of Header ----> */}
       <View style={styles.header}>
-        {/* Left: Logo */}
+        {/* Left Side Logo */}
         <Image style={styles.logo1} src={SampleLogo} />
 
         {/* Middle: Office Details */}
@@ -160,12 +161,13 @@ const HRMDOLayout = () => (
             centerforexcelllence@hrmdolgupangasinan.com
           </Text>
         </View>
-
-        {/* Right: Map */}
+        {/* Right Side logo Map */}
         <Image style={styles.logo2} src={SampleLogo} />
       </View>
-
+      {/* Title : Certification */}
       <Text style={styles.certificate}>CERTIFICATION</Text>
+
+      {/* <---- Start of the Main Content ----> */}
       <Text style={styles.content1}>
         {"\u00A0".repeat(7)}
         {addSpacing(
@@ -186,6 +188,8 @@ const HRMDOLayout = () => (
       <Text style={styles.content1}>
         servies rendered by him for the period from
       </Text>
+
+      {/* Computation Details */}
       <Text
         style={{
           fontFamily: "Calibri",
@@ -196,6 +200,8 @@ const HRMDOLayout = () => (
       >
         Computation is as follows:
       </Text>
+
+      {/* Title of Computation (the only way i know to seperate the letters with underline) */}
       <View style={styles.container}>
         {text.split("").map((char, index) => (
           <View key={index} style={styles.letterContainer}>
@@ -209,8 +215,9 @@ const HRMDOLayout = () => (
           </View>
         ))}
       </View>
+
+      {/* Left Column for the Computation Section */}
       <View style={{ flexDirection: "row", marginTop: 10, marginBottom: 14 }}>
-        {/* Left Column (EARNED LEAVE) */}
         <View style={{ flex: 1, fontSize: 10, fontFamily: "Calibri" }}>
           <Text style={{ marginBottom: 5, fontFamily: "CalibriBold" }}>
             EARNED LEAVE
@@ -223,7 +230,7 @@ const HRMDOLayout = () => (
           <Text>BALANCE LEAVE TO HIS CREDIT....</Text>
         </View>
 
-        {/* Right Column (Vacation and Sick) */}
+        {/* Right Column for the Computation Section */}
         <View
           style={{
             flex: 1,
@@ -253,6 +260,8 @@ const HRMDOLayout = () => (
           <Text>______________________</Text>
         </View>
       </View>
+      {/* <---- Start of the 2nd Main Content ----> */}
+      {/* Title : SUMMARY */}
       <View style={styles.container}>
         {text1.split("").map((char, index) => (
           <View key={index} style={styles.letterContainer}>
@@ -260,18 +269,20 @@ const HRMDOLayout = () => (
             <View
               style={[
                 styles.underline,
-                { transform: [{ rotate: index % 2 === 0 ? -5 : 5 }] }, // ✅ Corrected rotation
+                { transform: [{ rotate: index % 2 === 0 ? -5 : 5 }] },
               ]}
             />
           </View>
         ))}
       </View>
+      {/* Left Column for the Summary Section */}
       <View style={{ flexDirection: "row", marginTop: 2, marginBottom: 14 }}>
         <View style={{ flex: 1, fontSize: 10, fontFamily: "Calibri" }}>
           <Text>Balance vacation leave.................</Text>
           <Text>Balance sick leave........................</Text>
           <Text>TOTAL LEAVE TO HIS CREDIT......</Text>
         </View>
+        {/* Right Column for the Summary Section */}
         <View
           style={{
             flex: 1,
@@ -285,6 +296,7 @@ const HRMDOLayout = () => (
         </View>
       </View>
 
+      {/*  <---- Start of the Admininstrative Information ----> */}
       <View
         style={{
           flexDirection: "row",
@@ -296,7 +308,7 @@ const HRMDOLayout = () => (
         <Text style={{ fontSize: 8.5, marginRight: 175 }}>Computed By:</Text>
         <Text style={{ fontSize: 8.5 }}>Reviewed By:</Text>
       </View>
-
+      {/* Admininstrative Information */}
       <View
         style={{
           flexDirection: "row",
@@ -323,6 +335,7 @@ const HRMDOLayout = () => (
           </Text>
         </Text>
       </View>
+      {/* Head Department Information */}
       <View
         style={{
           flexDirection: "row",
@@ -357,6 +370,7 @@ const HRMDOLayout = () => (
         </Text>
       </View>
 
+      {/* <---- Start of the Footer ----> */}
       <View
         style={{
           flexDirection: "row",
@@ -393,6 +407,7 @@ const HRMDOLayout = () => (
           </Text>
         </Text>
       </View>
+      {/* <---- End of Footer ----> */}
     </Page>
   </Document>
 );

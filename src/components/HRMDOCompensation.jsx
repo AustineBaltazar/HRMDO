@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
     paddingTop: 20,
   },
   header: {
+    //style for the border line below the header
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
@@ -127,10 +128,10 @@ const addSpacing2 = (text, spaceCount = 4) => {
 const HRMDOCompensation = () => (
   <Document>
     <Page size="A4" style={styles.page}>
+      {/*<---- Start of Header: ----> */}
       <View style={styles.header}>
         {/* Left: Logo */}
         <Image style={styles.logo1} src={SampleLogo} />
-
         {/* Middle: Office Details */}
         <View style={styles.content}>
           <Text style={{ fontFamily: "Calibri", fontSize: 8.5 }}>
@@ -156,17 +157,21 @@ const HRMDOCompensation = () => (
             hrmdoorgdev01@gmail.com; pgphrmdorsp@gmail.com;
             pgphrmdo.ld@gmail.com;
           </Text>
+
           <Text style={{ fontFamily: "Calibri", fontSize: 7.5 }}>
             centerforexcelllence@hrmdolgupangasinan.com
           </Text>
         </View>
-
         {/* Right: Map */}
         <Image style={styles.logo2} src={SampleLogo} />
       </View>
+      {/* <----End of Header----> */}
+      {/* Right: Map */}
+      {/* TITLE Certification */}
       <Text style={styles.certificate}>
         CERTIFICATION OF EMPLOYMENT AND COMPENSATION
       </Text>
+      {/* Main Content*/}
       <Text style={styles.content1}>
         {addSpacing(
           "This is to certify that is a PERMANENT employee of the Provincial Government of Pangasinan, appointed "
@@ -175,6 +180,7 @@ const HRMDOCompensation = () => (
       <Text style={styles.content1}>
         as , , with the following compensation to wit:
       </Text>
+      {/* Computation Content */}
       <View
         style={{
           flexDirection: "row",
@@ -184,7 +190,7 @@ const HRMDOCompensation = () => (
           marginLeft: 35,
         }}
       >
-        {/* Left Column */}
+        {/* Left Column or the Details */}
         <View
           style={{
             flex: 1,
@@ -227,6 +233,7 @@ const HRMDOCompensation = () => (
           </View>
         </View>
 
+        {/* Right Column or the Numbers */}
         <View
           style={{
             flex: 1,
@@ -271,6 +278,8 @@ const HRMDOCompensation = () => (
           />
         </View>
       </View>
+      {/* <---- End of the first Main content ----> */}
+      {/* second Main Content */}
       <Text style={styles.content1}>
         {addSpacing2(
           "Further, He/She received the following additional remuneration other than the above during the "
@@ -279,6 +288,7 @@ const HRMDOCompensation = () => (
       <Text style={styles.content1}>
         twelve-month period ended December 31,
       </Text>
+      {/* Left Column or the Details */}
       <View
         style={{
           flexDirection: "row",
@@ -327,6 +337,7 @@ const HRMDOCompensation = () => (
           </View>
         </View>
 
+        {/* Right Column or the Numbers */}
         <View
           style={{
             flex: 1,
@@ -377,6 +388,9 @@ const HRMDOCompensation = () => (
         This certificate is being issued upon the request of{" "}
         {"\u00A0".repeat(2)}for whatever legal purpose it may serve
       </Text>
+      {/*<---- End of the 2nd Main Content---->*/}
+      {/* <---- Start of the Signature Content ----> */}
+      {/* Admininstrative Information */}
       <View
         style={{
           flexDirection: "row",
@@ -388,6 +402,7 @@ const HRMDOCompensation = () => (
         <Text style={{ fontSize: 8.5, marginRight: 175 }}>Prepared By:</Text>
         <Text style={{ fontSize: 8.5 }}>Reviewed By:</Text>
       </View>
+      {/* Names of Administratives */}
       <View
         style={{
           flexDirection: "row",
@@ -414,6 +429,7 @@ const HRMDOCompensation = () => (
           </Text>
         </Text>
       </View>
+      {/* Department Head Information */}
       <View
         style={{
           flexDirection: "row",
@@ -444,6 +460,7 @@ const HRMDOCompensation = () => (
           </Text>
         </Text>
       </View>
+      {/* Notary Sectio / content */}
       <View style={{ marginTop: 8 }}>
         <Text style={styles.content1}>
           Subscribed and sworn to before me, a notary public for and in the
@@ -491,6 +508,8 @@ const HRMDOCompensation = () => (
           <Text>Notary Public</Text>
         </View>
       </View>
+      {/* <---- End of Notary Section ---->*/}
+      {/* <---- Start of the Footer ----> */}
       <View
         style={{
           flexDirection: "row",
@@ -526,6 +545,7 @@ const HRMDOCompensation = () => (
           </Text>
         </Text>
       </View>
+      {/* <---- End of Footer ----> */}
     </Page>
   </Document>
 );

@@ -94,9 +94,12 @@ const styles = StyleSheet.create({
 const HRMDOLayout = () => (
   <Document>
     <Page size="B5" style={styles.page}>
+      {/* <---- Start of Header ----> */}
+      {/* Logo */}
       <View style={styles.logoContainer}>
         <Image style={styles.logo} src={SampleLogo} />
       </View>
+      {/* Office Information */}
       <Text
         style={{
           fontSize: 7,
@@ -142,9 +145,13 @@ const HRMDOLayout = () => (
           </Text>
         </Text>
       </Text>
+      {/* <---- End of Header ---->*/}
+      {/* Horizontal Rule (Line below the Header) */}
       <View style={styles.hr} />
-      <Text style={styles.certificate}>CERTIFICATION</Text>
 
+      {/* Title Main content*/}
+      <Text style={styles.certificate}>CERTIFICATION</Text>
+      {/* <---- Start of the Main Content ---->*/}
       <Text style={{ marginTop: 10, fontFamily: "Calibri" }}>
         <Text>
           <Text style={{ fontSize: 7, lineHeight: 2.5 }}>
@@ -152,6 +159,7 @@ const HRMDOLayout = () => (
             {"\n"}
           </Text>
         </Text>
+        {/* Human Information*/}
         <Text>
           <Text style={styles.name}>Name: {"\n"}</Text>
           <View>
@@ -162,6 +170,7 @@ const HRMDOLayout = () => (
             </Text>
           </View>
         </Text>
+        {/* Summary of Leave Balance*/}
         <View style={{ width: "50%", marginBottom: 5 }}>
           <Text style={styles.balance}>
             Vacation Leave:{"\u00A0".repeat(20)}37.4170{"\n"}
@@ -175,7 +184,7 @@ const HRMDOLayout = () => (
           </Text>
         </View>
       </Text>
-
+      {/* <---- continuation of  main Content ---->*/}
       <Text style={{ fontSize: 7, paddingTop: 7, fontFamily: "Calibri" }}>
         <Text style={{ lineHeight: 0.6 }}>
           Issued upon the request of whatever legal purpose it may serve.
@@ -186,6 +195,7 @@ const HRMDOLayout = () => (
         </Text>
       </Text>
 
+      {/* Administrative Information*/}
       <View
         style={{
           flexDirection: "row",
@@ -224,6 +234,7 @@ const HRMDOLayout = () => (
           </Text>
         </Text>
       </View>
+      {/* Department Head Information*/}
       <View
         style={{
           flexDirection: "row",
@@ -255,7 +266,7 @@ const HRMDOLayout = () => (
           </Text>
         </Text>
       </View>
-
+      {/* <---- Start of the FOOTER ---->*/}
       <View
         style={{
           flexDirection: "row",
@@ -290,6 +301,7 @@ const HRMDOLayout = () => (
           <Text style={styles.fontFooter2}>HRMDO-Leave Certification</Text>
         </Text>
       </View>
+      {/* <---- End of FOOTER ---->*/}
     </Page>
   </Document>
 );
