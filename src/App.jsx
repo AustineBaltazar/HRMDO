@@ -1,19 +1,29 @@
 import "./App.css";
 import HRMDOLayout from "./components/HRMDOLayout";
-import { PDFDownloadLink } from "@react-pdf/renderer";
+import HRMDOLeaveLayout from "./components/HRMDOLeaveLayout";
+import HRMDOCompensation from "./components/HRMDOCompensation";
+import { pdf } from "@react-pdf/renderer";
 
 function App() {
+  const openPDFInNewTab = async (Component) => {
+    const blob = await pdf(<Component />).toBlob();
+    const url = URL.createObjectURL(blob);
+    window.open(url, "_blank");
+  };
+
   return (
     <div className="App">
-      <PDFDownloadLink document={<HRMDOLayout />} fileName="FORM.pdf">
-        {({ loading }) =>
-          loading ? (
-            <button>Loading document...</button>
-          ) : (
-            <button>Download PDF</button>
-          )
-        }
-      </PDFDownloadLink>
+      <button onClick={() => openPDFInNewTab(HRMDOLayout)}>
+        View HRMDO Layout
+      </button>
+
+      <button onClick={() => openPDFInNewTab(HRMDOLeaveLayout)}>
+        View HRMDO Leave Layout
+      </button>
+
+      <button onClick={() => openPDFInNewTab(HRMDOCompensation)}>
+        View HRMDO Compensation
+      </button>
     </div>
   );
 }
